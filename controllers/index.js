@@ -1,5 +1,5 @@
-const PersonOne = (reg, res, next) => {
-    res.send('Kayden Bright');
-};
+//const PersonOne = (reg, res, next) => {
+    //res.send('Kayden Bright');
+//};
 
-module.exports = {PersonOne};
+//rsmodule.exports = {PersonOne};
