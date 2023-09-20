@@ -23,7 +23,6 @@ async function run() {
     if (findAllResult.length === 0) {
       console.log("No documents found in the 'Contacts' collection.\n");
     } else {
-      document.write(`Found ${findAllResult.length} documents in the 'Contacts' collection:\n${JSON.stringify(findAllResult)}\n`);
       console.log(`Found ${findAllResult.length} documents in the 'Contacts' collection:\n${JSON.stringify(findAllResult)}\n`);
     }
   } catch (err) {
