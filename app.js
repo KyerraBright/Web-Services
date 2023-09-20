@@ -2,8 +2,7 @@ const { MongoClient } = require("mongodb");
 
 async function run() {
   // TODO: Replace the placeholder connection string below with your Atlas cluster specifics.
-  const uri =
-    "mongodb+srv://kyerra:March12001@cluster0.6vwto1x.mongodb.net/";
+  const uri ="mongodb+srv://kyerra:March12001@cluster0.6vwto1x.mongodb.net/";
 
   const client = new MongoClient(uri);
 
