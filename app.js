@@ -23,7 +23,22 @@ async function run() {
     if (findAllResult.length === 0) {
       console.log("No documents found in the 'Contacts' collection.\n");
     } else {
-      document.write(`Found ${findAllResult.length} documents in the 'Contacts' collection:\n${JSON.stringify(findAllResult)}\n`);
+      // Create a <div> element to display console.log output
+const logOutputDiv = document.createElement('div');
+logOutputDiv.style.border = '1px solid #ccc'; // Add some styling for visibility
+document.body.appendChild(logOutputDiv); // Append the <div> to the document body
+
+// Redefine console.log to append output to the <div>
+console.log = function (message) {
+    // Create a new <p> element for each log message
+    const logMessage = document.createElement('p');
+    logMessage.textContent = message; // Set the message content
+    logOutputDiv.appendChild(logMessage); // Append to the <div>
+};
+
+// Example usage of console.log
+console.log('This will be displayed on the web page.');
+
       console.log(`Found ${findAllResult.length} documents in the 'Contacts' collection:\n${JSON.stringify(findAllResult)}\n`);
     }
   } catch (err) {
