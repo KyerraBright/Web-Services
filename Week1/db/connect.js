@@ -19,7 +19,7 @@ const initDb = (callback) => {
       .then((client) => {
         console.log('second function');
         _db = client;
-        callback(null, _db);
+        callback(null, _db, "Database");
       })
       .catch((err) => {
         console.log('error');
