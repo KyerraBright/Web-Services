@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-const apiUrl = "http://localhost:3000/contacts"; // Replace with the appropriate URL
+const apiUrl = "http://localhost:3000"; // Replace with the appropriate URL
 console.log('contacts.js');
 // Create a new contact
 fetch(apiUrl, {
