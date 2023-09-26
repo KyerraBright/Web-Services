@@ -1,7 +1,6 @@
 const fetch = require("node-fetch");
 
-const apiUrl = "https://us-west-2.aws.data.mongodb-api.com/app/data-jrhxc/endpoint/data/v1"; // Replace with the appropriate URL
-const apikey = "650b11decaec4ad06b5cf67e";
+const apiUrl = "mongodb+srv://kyerra:March12001@cluster0.6vwto1x.mongodb.net/Contacts"; // Replace with the appropriate URL
 console.log('contacts.js');
 // Create a new contact
 fetch(apiUrl, {
