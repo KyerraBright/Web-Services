@@ -1,7 +1,7 @@
 const routes = require('express').Router();
 
 const controllers = require("../Controllers"); // Use the correct path
-//check spelling
+//check spellings
 
 routes.get('/', controllers.Books);
 

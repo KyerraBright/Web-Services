@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 const express = require("express");
 const app = express();
-//make sure everything is spelled correctly
+//make sure everything is spelled correctlys
 app.use('/', require('./routes'));
 
 async function run() {
