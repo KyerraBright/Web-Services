@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 const express = require("express");
 const app = express();
 const port = 3000;
-
+//make sure everything is spelled correctly
 app.use('/', require('./routes'));
 
 app.listen(port, () => {
