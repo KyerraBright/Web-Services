@@ -1,13 +1,8 @@
 const { MongoClient } = require("mongodb");
 const express = require("express");
 const app = express();
-const port = 3000;
 //make sure everything is spelled correctly
 app.use('/', require('./routes'));
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
 
 async function run() {
   // TODO: Replace the placeholder connection string below with your Atlas cluster specifics.
