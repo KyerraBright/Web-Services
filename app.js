@@ -5,7 +5,7 @@ const app = express();
 //make sure everything is spelled correctlys
 app.use('/', require('./routes'));
 
-/*async function run() {
+async function run() {
   // TODO: Replace the placeholder connection string below with your Atlas cluster specifics.
   const uri =
     "mongodb+srv://kyerra:March12001@cluster0.6vwto1x.mongodb.net/";
@@ -39,4 +39,4 @@ app.use('/', require('./routes'));
 }
 
 // Call the run function to start the process.
-run();*/
+run();
