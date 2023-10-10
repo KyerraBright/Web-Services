@@ -1,4 +1,5 @@
 const { MongoClient } = require("mongodb");
+//everything is updated
 const express = require("express");
 const app = express();
 //make sure everything is spelled correctlys
