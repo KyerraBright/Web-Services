@@ -1,13 +1,58 @@
 const { MongoClient } = require("mongodb");
 //everything is updated
-const express = require("express");
-const app = express();
-const port = 3000;
 //make sure everything is spelled correctlys
-app.use('/', require('./routes'));
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const express = require('express');
+const app = express();
+
+// Middleware to parse JSON requests
+app.use(express.json());
+
+// Your existing Books route
+const { Books } = require('./Controllers');
+app.get('/Controllers', Books);
+
+// Route for adding a book
+app.post('/addBook', (req, res) => {
+    const newBook = {
+        "Title": "HAHAHA",
+        "Author": "JKJKJKJ"
+    };
+
+    // Generate a unique key for the new book
+    const newBookKey = `Book ${Object.keys(books).length + 1}`;
+
+    books[newBookKey] = newBook;
+
+    // Send a success response or updated book list
+    res.json(books);
 });
+app.delete('/deleteBook', (req, res) => {
+  const bookToDelete = {
+      title: "The City of Bones",
+      author: "Cassandra Clare"
+  };
+
+  // Find the book based on title and author
+  const bookKeyToDelete = Object.keys(books).find(key => {
+      const book = books[key];
+      return book.Title === bookToDelete.title && book.Author === bookToDelete.author;
+  });
+
+  if (bookKeyToDelete) {
+      delete books[bookKeyToDelete];
+      res.json({ message: 'Book deleted successfully' });
+  } else {
+      res.status(404).json({ message: 'Book not found' });
+  }
+});
+
+
+// Start the Express server
+const port = 3000; // Change the port as needed
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
 
 async function run() {
   // TODO: Replace the placeholder connection string below with your Atlas cluster specifics.
