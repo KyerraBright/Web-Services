@@ -3,6 +3,11 @@ const { MongoClient } = require("mongodb");
 //make sure everything is spelled correctlys
 const express = require('express');
 const app = express();
+// Start the Express server
+const port = 3000; // Change the port as needed
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -44,13 +49,6 @@ app.delete('/deleteBook', (req, res) => {
   } else {
       res.status(404).json({ message: 'Book not found' });
   }
-});
-
-
-// Start the Express server
-const port = 3000; // Change the port as needed
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
 });
 
 
