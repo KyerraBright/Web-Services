@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Your existing Books route
 const { Books } = require('./Controllers');
-app.get('/Controllers', Books);
+app.get('/', Books);
 
 // Route for adding a book
 app.post('/addBook', (req, res) => {
