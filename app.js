@@ -61,21 +61,30 @@ async function run() {
 
   try {
     await client.connect();
-
+  
     const dbName = "Books";
-    const collectionName = "Books";
-
+    const collectionName1 = "Books";
+    const collectionName2 = "Cassandra";
+  
     const database = client.db(dbName);
-    const collection = database.collection(collectionName);
-
+    const collection1 = database.collection(collectionName1);
+    const collection2 = database.collection(collectionName2);
+  
     const findAllQuery = {}; // An empty query matches all documents
-
-    const findAllResult = await collection.find(findAllQuery).toArray();
-
-    if (findAllResult.length === 0) {
+  
+    const findAllResult1 = await collection1.find(findAllQuery).toArray();
+    const findAllResult2 = await collection2.find(findAllQuery).toArray();
+  
+    if (findAllResult1.length === 0) {
       console.log("No documents found in the 'Books' collection.\n");
     } else {
-      console.log(`Found ${findAllResult.length} documents in the 'Books' collection:\n${JSON.stringify(findAllResult)}\n`);
+      console.log(`Found ${findAllResult1.length} documents in the 'Books' collection:\n${JSON.stringify(findAllResult1)}\n`);
+    }
+  
+    if (findAllResult2.length === 0) {
+      console.log("No documents found in the 'Cassandra' collection.\n");
+    } else {
+      console.log(`Found ${findAllResult2.length} documents in the 'Cassandra' collection:\n${JSON.stringify(findAllResult2)}\n`);
     }
   } catch (err) {
     console.error(`Something went wrong: ${err}\n`);

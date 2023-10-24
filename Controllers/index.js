@@ -27,6 +27,10 @@ const Books = (req, res, next) => {
         "Book 7": {
             "Title": "The Shadowhunter's Codex",
             "Author": "Cassandra Clare"
+        },
+        "Cassandra Clare":{
+            "New York Times": "Yes",
+            "Most Popular Series": "The Mortal Instruments"
         }
     };
 
